@@ -4,7 +4,18 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+let modal = document.getElementById("modal");
+modal.classList.add("hidden")
 
+let likeBtn = document.getElementsByClassName("like-glyph");
+likeBtn.addEventListener("click",mimicServerCall())
+let likeBtnArr = Array.from(likeBtn);
+likeBtnArr.forEach((elem)=>{
+  console.log(elem.textContent)
+  elem.addEventListener("click", function(){
+    elem.textContent = FULL_HEART;
+  })
+})
 
 
 //------------------------------------------------------------------------------
